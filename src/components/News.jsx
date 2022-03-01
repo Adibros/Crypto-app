@@ -18,7 +18,7 @@ const News = ({simplified}) => {
   return (
     <Row gutter={[24,24]}>
       {!simplified && (
-        <Col span={24}>
+        <Col span={24} key="newskey">
           <Select
                 showSearch
                 className='select-news'
@@ -27,7 +27,7 @@ const News = ({simplified}) => {
                 onChange={(value) => setNewsCategory(value)}
                 filterOption = {(input,option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0} 
           >
-            <Option value="Cryptocurrency">Cryptocurrency</Option>
+            <Option value="Cryptocurrency" >Cryptocurrency</Option>
 
             {data?.data?.coins.map((coin) =><Option value={coin.name}>{coin.name}</Option>)}
           </Select>
